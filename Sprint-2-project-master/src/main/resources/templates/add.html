@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>TODO Manager</title>
+</head>
+<style type="text/css">
+	.header{
+		font-size: 20px;
+		padding: 10px;
+	}
+	body {
+ 
+ background-color: Lightyellow;
+}
+h1{
+   background-color:none;
+  font-weight: Bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+ul {
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+  overflow: hidden;
+  background-color:green;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+	
+</style>
+<body>
+	<h1 align="center">Welcome to TODO Manager</h1>
+</body>
+<div class="header" align="center">
+
+
+<ul>
+  <li><a href="/">View</a></li>
+  <li><a href="/add">Add</a></li>
+  <li><a href="/show">Show</a></li>
+  <li><a href="/login">Logout</a></li>
+ </ul>
+ 
+</div>
+<div align="center">
+	<h1>Create New Task</h1> <br />
+	<form action="#" th:action="@{/save}" th:object="${task}" method="post">
+		<table border="0" cellpadding="5">
+			<tr>
+				<td>Title:</td>
+				<td><textarea placeholder="This is TODO Title" cols=50 th:field="*{title}" required/></td>
+			</tr>
+			<tr>
+				<td>Content:</td>
+				<td><textarea placeholder="This is TODO Content" rows=8 cols=50 th:field="*{content}" required/></td>
+				
+			</tr>
+			
+			<tr>
+				<td colspan="2"><button type="submit">Save</button> </td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+</html>

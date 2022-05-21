@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>TODO Manager</title>
+</head>
+<style type="text/css">
+	.header{
+		background-color: greenyellow;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 20px;
+		padding: 10px;
+		
+	}
+	body {
+ 
+ background-color: Lightyellow;
+}
+
+h1{
+  font-family: "Audiowide", sans-serif;
+}
+
+</style>
+
+<body>
+	<h1 align="center">Welcome to TODO Manager</h1>
+</body>
+<div class="header" align="center">
+	<a href="/">VIEW </a> &nbsp; &nbsp; &nbsp;
+	<a href="/add">ADD TODOs</a> &nbsp; &nbsp; &nbsp;
+	<a href="/show">Show TODOs</a> &nbsp;&nbsp; &nbsp;
+	<a href="/login">Logout</a> 
+</div>
+<div  align="center">
+<form action="#" th:action="@{/save}" th:object="${task}" method="post">
+	<table border="0" cellpadding="5">
+		<tr>
+					<td>Task ID:</td>
+					<td> <input type="text" th:field="*{id}" readonly="readonly" /> </td>
+				</tr>
+		<tr>
+			<td>Title:</td>
+			<td><textarea placeholder="This is TODO Title" cols=50 th:field="*{title}" required /></td>
+		</tr>
+		<tr>
+			<td>Content:</td>
+			<td><textarea placeholder="This is TODO Content" rows=8 cols=50 th:field="*{content}" required /></td>
+
+		</tr>
+
+		<tr>
+			<td colspan="2"><button type="submit">Save</button> </td>
+		</tr>
+	</table>
+</form>
+</div>
+</html>

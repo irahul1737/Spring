@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>User</title>
+</head>
+<style>
+body {font-family:"Audiowide", sans-serif;
+}
+
+
+body {
+ 
+ background-image :url("images/images.jpeg") ;
+
+}
+
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  font-colour: Yellow;
+  font-weight:Bold;
+  padding: 14px 20px;
+  margin: 20px 0;
+  display: inline-block;
+ 
+ 
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 20px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+  
+</style>
+<body>
+	<div align="center">
+	<h1> User Registraion</h1>
+	<form action="#" th:action="@{/saveuser}" th:object="${user}" method="post">
+				<table border="0" cellpadding="5">
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" th:field="*{name}" required/></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" th:field="*{password}" required /></td>
+				</tr>	
+				<tr>
+					<td colspan="2"><button type="submit">Register</button> </td>
+				</tr>
+				
+			</table>
+		</form>
+		<td>Already have Account?</td><a href="/login">Login</a> <br /><br />
+	</div>
+</body>
+</html>
